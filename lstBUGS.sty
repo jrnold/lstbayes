@@ -1,0 +1,54 @@
+%% lstBUGS.sty
+%% Copyright 2012 Jeffrey B. Arnold
+% 
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+% 
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Jeffrey B. qikArnold
+% 
+% This work consists of the file lstBUGS.sty
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lstBUGS}[2012/08/09 listings language support for BUGS and Stan]
+\RequirePackage{listings}
+
+\lstdefinelanguage{BUGS}{
+  keywords=[1]{for,in,model},%
+  morecomment=[l]{\#},%
+  sensitive=true,%
+  alsoletter={.},%
+  otherkeywords={<-,~},%
+  literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
+}
+\lstdefinelanguage[JAGS]{BUGS}[]{BUGS}{
+  morekeywords=[1]{data,var},%
+  morecomment=[n]{/*}{*/}%
+}
+\lstalias[]{JAGS}[JAGS]{BUGS}
+\lstalias[]{OpenBUGS}[]{BUGS}
+\lstalias[]{WinBUGS}[]{BUGS}
+
+\lstdefinelanguage{Stan}{
+  %% Cannot figure out how to get spaces in a keyword
+  %% Reserved + block declarationsx
+  keywords=[1]{for,in,data,parameters,model,%
+    transformed,generated,lp__},%
+  %% Types
+  keywords=[2]{int,real,vector,simplex,ordered,%
+    row_vector,matrix,corr_matrix,cov_matrix},%
+  % Just assignment operators
+  otherkeywords={<-,~},%
+  sensitive=true,%
+  morecomment=[l]{\#},%
+  morecomment=[l]{//},%
+  morecomment=[n]{/*}{*/},%
+  literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
+}
+
