@@ -16,14 +16,14 @@ LaTeX will find it. See these
 
 Add the following line to the header of your .tex file
 
-```
+```latex
 \usepackage{lstBUGS}
 ```
 
 Set the language keyword to `BUGS`, `JAGS` or `Stan` in the
 `lstlistings` environment.  For example,
 
-```
+```latex
 \begin{lstlisting}[language=BUGS]
 model {
 	...
