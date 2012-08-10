@@ -4,7 +4,8 @@ Adds support for the following languages to the LaTeX
 [listings](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
 package which pretty-prints source code.
 
-- [BUGS](http://www.openbugs.info/w/) and [JAGS](http://mcmc-jags.sourceforge.net/)
+- [BUGS](http://www.openbugs.info/w/)
+- [JAGS](http://mcmc-jags.sourceforge.net/)
 - [Stan](http://code.google.com/p/stan/) 
 
 # Usage
@@ -29,4 +30,6 @@ model {
 }
 \end{lstlisting}
 ```
+
+See the `listings` documentation for more on how to use the `listings` package.
 
