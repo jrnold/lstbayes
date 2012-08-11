@@ -20,7 +20,7 @@
 \RequirePackage{listings}
 
 \lstdefinelanguage{BUGS}{
-  keywords=[1]{for,in,model},%
+  keywords=[1]{for,in,model,T,I,C},%
   morecomment=[l]{\#},%
   sensitive=true,%
   alsoletter={.},%
@@ -28,7 +28,7 @@
   literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
 }
 \lstdefinelanguage[JAGS]{BUGS}[]{BUGS}{
-  morekeywords=[1]{data,var},%
+  morekeywords=[1]{data,var,const},%
   morecomment=[n]{/*}{*/}%
 }
 \lstalias[]{JAGS}[JAGS]{BUGS}
@@ -39,7 +39,7 @@
   %% Cannot figure out how to get spaces in a keyword
   %% Reserved + block declarationsx
   keywords=[1]{for,in,data,parameters,model,%
-    transformed,generated,lp__},%
+    transformed,generated,quantities,T,lp__},%
   %% Types
   keywords=[2]{int,real,vector,simplex,ordered,%
     row_vector,matrix,corr_matrix,cov_matrix},%
