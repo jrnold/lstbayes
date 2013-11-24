@@ -16,7 +16,7 @@
 % This work consists of the file lstBUGS.sty
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{lstBUGS}[2013/04/14 listings language support for BUGS and Stan]
+\ProvidesPackage{lstBUGS}[2013/11/24 listings language support for BUGS and Stan]
 \RequirePackage{listings}
 
 \lstdefinelanguage{BUGS}{
@@ -39,9 +39,11 @@
   %% Cannot figure out how to get spaces in a keyword
   %% Reserved + block declarations
   keywords=[1]{for,in,data,parameters,model,%
-    transformed,generated,lp__,lower,upper,print,T},%
+    transformed,generated,lp__,lower,upper,print,T,%
+    increment_log_prob},%
   keywords=[2]{int,real,vector,simplex,unit_vector,ordered,%
-    row_vector,matrix,corr_matrix,cov_matrix,positive_ordered},%
+    cholesky_factor_cov,row_vector,matrix,corr_matrix,cov_matrix,%
+    positive_ordered},%
   % Just assignment operators
   otherkeywords={<-,~},%
   sensitive=true,%
