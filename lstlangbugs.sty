@@ -38,12 +38,11 @@
 \lstdefinelanguage{Stan}{
   %% Cannot figure out how to get spaces in a keyword
   %% Reserved + block declarations
-  keywords=[1]{for,in,data,parameters,model,%
-    transformed,generated,lp__,lower,upper,print,T,%
-    increment_log_prob},%
-  keywords=[2]{int,real,vector,simplex,unit_vector,ordered,%
-    cholesky_factor_cov,row_vector,matrix,corr_matrix,cov_matrix,%
-    positive_ordered},%
+  keywords=[1]{data,parameters,transformed,model,generated,quantities,%
+    for,in,while,print,if,else,lp__,lower,upper,increment_log_prob,T},%
+  keywords=[2]{int,real,matrix,cov_matrix,corr_matrix,%
+    cholesky_factor_cov,vector,simplex,unit_vector,ordered,%
+    positive_ordered,row_vector},%
   % Just assignment operators
   otherkeywords={<-,~},%
   sensitive=true,%
