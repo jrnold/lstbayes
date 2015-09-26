@@ -1,3 +1,6 @@
 /auto
 *.log
 *.pdf
+/lstlangbayes.aux
+/lstlangbayes.glo
+/lstlangbayes.idx
