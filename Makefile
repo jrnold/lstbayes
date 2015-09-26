@@ -6,13 +6,6 @@
 LATEX = pdflatex
 MAKEINDEX = makeindex
 TEX = tex
-# tarring options
-ifneq "$(wildcard listings.version)" ""
-include listings.version        # version and date of the package
-endif
-
-.SUFFIXES:                              
-.SUFFIXES: .dtx .ins .pdf .sty
 
 .PHONY: build pdf all
 
@@ -22,9 +15,9 @@ build: lstlangbayes.sty
 
 pdf: lstlangbayes.pdf
 
-listings.sty: lstlangbayes.ins lstlangbayes.dtx
+lstlangbayes.sty: lstlangbayes.ins lstlangbayes.dtx
 	$(TEX) $<
 
-lstlangbayes.pdf: lstlangbayes.dtx
-	$(LATEX) ${<:.sty=.dtx}
+# lstlangbayes.pdf: lstlangbayes.dtx
+# 	$(LATEX) ${<:.sty=.dtx}
 

@@ -23,15 +23,13 @@
 %<*driver>
 \ProvidesFile{lstlangbayes.dtx}
 %</driver>
-%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\NeedsTeXFormat{LaTeX2e}[2005/12/01]
 %<package>\ProvidesPackage{lstlangbayes}
-%<*package>
-    [2015-09-26 1.0.0 listings drivers for Bayesian modeling languages]
-%</package>
-%
+%<package>[2015/09/26 v1.0.0 listings drivers for Bayesian modeling languages]
+% 
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{lstlangbayes}[2015-09-26]
+\usepackage{lstlangbayes,hyperref}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -41,6 +39,7 @@
   \PrintIndex
 \end{document}
 %</driver>
+% 
 % \fi
 %
 % \CheckSum{15}
@@ -62,21 +61,21 @@
 %   Right brace   \}     Tilde         \~}
 %
 %
-% \changes{1.0.0}{2015-09-26}{Converted to DTX file}
+% \changes{1.0.0}{2015/09/26}{Converted to DTX file}
+%
+% \GetFileInfo{lstlangbayes.dtx}
 %
 % \DoNotIndex{\newcommand,\newenvironment}
 %
-% \providecommand*{\url}{\texttt}
-% \GetFileInfo{lstlangbayes.dtx}
 % \title{The \textsf{lstlangbayes} package}
-% \author{Jeffrey B. Arnold \\ \url{jeffrey.arnold@gmail.com}}
+% \author{Jeffrey B. Arnold \\ \texttt{jeffrey.arnold@gmail.com}}
 % \date{\fileversion~from \filedate}
 %
 % \maketitle
 %
 % \section{Introduction}
 %
-% This package provides language drivers for the \href{https://www.ctan.org/pkg/listings?lang=en}{listings} package for the several Bayesian modeling languages: BUGS, JAGS, and Stan.
+% This package provides language drivers for the listings package for the several Bayesian modeling languages: BUGS, JAGS, and Stan.
 %
 % \section{Usage}
 %
@@ -86,42 +85,27 @@
 %
 % \StopEventually{}
 %
+%\iffalse
+%<*package>
+%\fi
+%
 % \section{Implementation}
 %
-% \iffalse
-%<*package>
-% \fi
-%
-%% lstBUGS.sty
-%% Copyright 2015 Jeffrey B. Arnold
-% 
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-% http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-% 
-% This work has the LPPL maintenance status `maintained'.
-% 
-% The Current Maintainer of this work is Jeffrey B. Arnold
-% 
-% This work consists of the file lstlangbayes.sty
-%
-%    \begin{macrocode}
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{lstlangbayes}[2014/11/13 listings language support for BUGS and Stan]
+% \begin{macro}
+%     \begin{macrocode}
 \RequirePackage{listings}
-
-% 
-% \section{Drivers} 
+%     \end{macrocode}
+% \end{macro}
+%
+% \section{Language Drivers}
 %
 % \subsection{BUGS}
 %
 % Language driver for BUGS, including \href{http://www.openbugs.net/w/FrontPage}{WinBUGS} and \href{http://openbugs.net}{OpenBUGS}.
 % The driver is based on \href{http://www.openbugs.net/Manuals/Manual.html}{OpenBUGS v. 3.2.3}.
 %
+%  
+%     \begin{macrocode}
 \lstdefinelanguage{BUGS}{
   keywords=[1]{for,in,model,T,I,C},%
   morecomment=[l]{\#},%
@@ -132,28 +116,26 @@
 }
 \lstalias[]{OpenBUGS}[]{BUGS}
 \lstalias[]{WinBUGS}[]{BUGS}
-
+%     \end{macrocode}
 %
 % \subsection{JAGS}
 %
 % Language driver for \href{http://mcmc-jags.sourceforge.net/}{JAGS}.
 % The driver is based on JAGS version 3.4.0 released on Sept 4, 2013.
 % 
-%
+%     \begin{macrocode}
 \lstdefinelanguage[JAGS]{BUGS}[]{BUGS}{
   morekeywords=[1]{data,var,const},%
   morecomment=[n]{/*}{*/}%
 }
-
-
+%     \end{macrocode}
 % 
 % \subsection{Stan}
 %
 % Language driver for \href{http://mc-stan.org/}{Stan}.
 % The driver is based on version \href{https://github.com/stan-dev/stan/releases/download/v2.8.0/stan-reference-2.8.0.pdf}{2.8.0} (Sept 8, 2015).
 %
-%
-
+%     \begin{macrocode}
 \lstdefinelanguage{Stan}{
   keywords=[1]{functions,data,parameters,transformed,model,generated,quantities,%
     for,in,while,print,if,else,lp__,lower,upper,increment_log_prob,T,return,%
@@ -172,12 +154,11 @@
   string=[d]"%,
   literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
 }
-%    \end{macrocode}
-
+%     \end{macrocode}
 %
-% \iffalse
-%</package>
-% \fi
+%\iffalse
+%<*package>
+%\fi
 %
 % \Finale
-\endinput
+

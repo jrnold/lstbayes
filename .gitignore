@@ -4,3 +4,5 @@
 /lstlangbayes.aux
 /lstlangbayes.glo
 /lstlangbayes.idx
+*.dvi
+*.out
