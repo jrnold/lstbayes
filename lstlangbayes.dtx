@@ -1,0 +1,183 @@
+% \iffalse meta-comment
+%
+% Copyright (C) 2015 by Jeffrey Arnold <jeffrey.arnold@gmail.com>
+% ---------------------------------------------------------------------------
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is <+maintainer+>.
+%
+% This work consists of the files lstlangbayes.dtx and lstlangbayes.ins
+% and the derived filebase lstlangbayes.sty.
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{lstlangbayes.dtx}
+%</driver>
+%<package>\NeedsTeXFormat{LaTeX2e}[1999/12/01]
+%<package>\ProvidesPackage{lstlangbayes}
+%<*package>
+    [2015-09-26 1.0.0 listings drivers for Bayesian modeling languages]
+%</package>
+%
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{lstlangbayes}[2015-09-26]
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{lstlangbayes.dtx}
+  \PrintChanges
+  \PrintIndex
+\end{document}
+%</driver>
+% \fi
+%
+% \CheckSum{15}
+%
+% \CharacterTable
+%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%   Digits        \0\1\2\3\4\5\6\7\8\9
+%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%   Dollar        \$     Percent       \%     Ampersand     \&
+%   Acute accent  \'     Left paren    \(     Right paren   \)
+%   Asterisk      \*     Plus          \+     Comma         \,
+%   Minus         \-     Point         \.     Solidus       \/
+%   Colon         \:     Semicolon     \;     Less than     \<
+%   Equals        \=     Greater than  \>     Question mark \?
+%   Commercial at \@     Left bracket  \[     Backslash     \\
+%   Right bracket \]     Circumflex    \^     Underscore    \_
+%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%   Right brace   \}     Tilde         \~}
+%
+%
+% \changes{1.0.0}{2015-09-26}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \providecommand*{\url}{\texttt}
+% \GetFileInfo{lstlangbayes.dtx}
+% \title{The \textsf{lstlangbayes} package}
+% \author{Jeffrey B. Arnold \\ \url{jeffrey.arnold@gmail.com}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+% \section{Introduction}
+%
+% This package provides language drivers for the \href{https://www.ctan.org/pkg/listings?lang=en}{listings} package for the several Bayesian modeling languages: BUGS, JAGS, and Stan.
+%
+% \section{Usage}
+%
+% See the documentation of the listings package. 
+%
+
+%
+% \StopEventually{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%
+%% lstBUGS.sty
+%% Copyright 2015 Jeffrey B. Arnold
+% 
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+% 
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Jeffrey B. Arnold
+% 
+% This work consists of the file lstlangbayes.sty
+%
+%    \begin{macrocode}
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lstlangbayes}[2014/11/13 listings language support for BUGS and Stan]
+\RequirePackage{listings}
+
+% 
+% \section{Drivers} 
+%
+% \subsection{BUGS}
+%
+% Language driver for BUGS, including \href{http://www.openbugs.net/w/FrontPage}{WinBUGS} and \href{http://openbugs.net}{OpenBUGS}.
+% The driver is based on \href{http://www.openbugs.net/Manuals/Manual.html}{OpenBUGS v. 3.2.3}.
+%
+\lstdefinelanguage{BUGS}{
+  keywords=[1]{for,in,model,T,I,C},%
+  morecomment=[l]{\#},%
+  sensitive=true,%
+  alsoletter={.},%
+  otherkeywords={<-,~},%
+  literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
+}
+\lstalias[]{OpenBUGS}[]{BUGS}
+\lstalias[]{WinBUGS}[]{BUGS}
+
+%
+% \subsection{JAGS}
+%
+% Language driver for \href{http://mcmc-jags.sourceforge.net/}{JAGS}.
+% The driver is based on JAGS version 3.4.0 released on Sept 4, 2013.
+% 
+%
+\lstdefinelanguage[JAGS]{BUGS}[]{BUGS}{
+  morekeywords=[1]{data,var,const},%
+  morecomment=[n]{/*}{*/}%
+}
+
+
+% 
+% \subsection{Stan}
+%
+% Language driver for \href{http://mc-stan.org/}{Stan}.
+% The driver is based on version \href{https://github.com/stan-dev/stan/releases/download/v2.8.0/stan-reference-2.8.0.pdf}{2.8.0} (Sept 8, 2015).
+%
+%
+
+\lstdefinelanguage{Stan}{
+  keywords=[1]{functions,data,parameters,transformed,model,generated,quantities,%
+    for,in,while,print,if,else,lp__,lower,upper,increment_log_prob,T,return,%
+    reject,integrate_ode},%
+  keywords=[2]{int,real,vector,%
+    ordered,positive_ordered,simplex,unit_vector,%
+    row_vector,matrix,%
+    cholesky_factor_corr,cholesky_factor_cov,%
+    coor_matrix,cov_matrix,%
+    void}%
+  otherkeywords={<-,~},%
+  sensitive=true,%
+  morecomment=[l]{\#},%
+  morecomment=[l]{//},%
+  morecomment=[n]{/*}{*/},%
+  string=[d]"%,
+  literate={<-}{{$\leftarrow$}}1 {~}{{$\sim$}}1%
+}
+%    \end{macrocode}
+
+%
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput
