@@ -1,5 +1,5 @@
 #
-# This file generates files required to use the lstlangbayes package
+# This file generates files required to use the lstbayes package
 #
 
 # formatting tools
@@ -11,13 +11,13 @@ TEX = tex
 
 all: build pdf
 
-build: lstlangbayes.sty
+build: lstbayes.sty
 
-pdf: lstlangbayes.pdf
+pdf: lstbayes.pdf
 
-lstlangbayes.sty: lstlangbayes.ins lstlangbayes.dtx
+lstbayes.sty: lstbayes.ins lstbayes.dtx
 	$(TEX) $<
 
-# lstlangbayes.pdf: lstlangbayes.dtx
-# 	$(LATEX) ${<:.sty=.dtx}
+lstbayes.pdf: lstbayes.dtx
+	$(LATEX) $<
 

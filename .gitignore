@@ -6,3 +6,6 @@
 /lstlangbayes.idx
 *.dvi
 *.out
+*.aux
+*.glo
+*.idx
