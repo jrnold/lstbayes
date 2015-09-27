@@ -7,9 +7,9 @@ Adds support for the following languages to the LaTeX
 [listings](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
 package which pretty-prints source code.
 
-- [BUGS](http://www.openbugs.info/w/)
+- [BUGS](http://www.openbugs.net)
 - [JAGS](http://mcmc-jags.sourceforge.net/)
-- [Stan](http://code.google.com/p/stan/) 
+- [Stan](http://mc-stan.org/)
 
 # Usage
 
