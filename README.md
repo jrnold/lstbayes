@@ -45,6 +45,10 @@ model {
 Also see the examples in `examples.tex` and `examples.pdf` files included in this repository.
 See the `listings` [documentation](https://www.ctan.org/tex-archive/macros/latex/contrib/listings/?la) for more on how to use the `listings` package.
 
+# Issues
+
+Development occurs on github at <https://github.com/jrnold/lstbayes>. 
+
 
 <!--  LocalWords:  lstbayes tex usepackage lstlisting pdf
  -->
