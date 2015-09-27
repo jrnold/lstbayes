@@ -10,26 +10,11 @@ package which pretty-prints source code.
 
 # Usage
 
-Place lstBUGS.sty in the same directory as your .tex file or somewhere
+Place lstbayes.sty in the same directory as your .tex file or somewhere
 LaTeX will find it. See these
 [instructions](http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages).
 
-Add the following line to the header of your .tex file
-
-```latex
-\usepackage{lstBUGS}
-```
-
-Set the language keyword to `BUGS`, `JAGS` or `Stan` in the
-`lstlistings` environment.  For example,
-
-```latex
-\begin{lstlisting}[language=BUGS]
-model {
-	...
-}
-\end{lstlisting}
-```
+See the examples in `examples.tex` and `examples.pdf` files included in this repository.
 
 See the `listings` documentation for more on how to use the `listings` package.
 
