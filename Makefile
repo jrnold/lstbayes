@@ -3,6 +3,7 @@
 #
 
 # formatting tools
+SHELL = bash
 LATEX = pdflatex
 TEX = tex
 
@@ -13,7 +14,10 @@ all: build pdf
 build: lstbayes.sty
 
 release: build pdf README.md
-	zip lstbayes.zip $^  *.sty *.pdf *.ins *.dtx *.tex Makefile
+	if [ -d lstbayes ]; then rmdir lstbayes; fi
+	mkdir lstbayes
+	cp *.pdf *.ins *.dtx *.tex Makefile lstbayes
+	zip -r lstbayes.zip lstbayes
 
 pdf: lstbayes.pdf examples.pdf
 
