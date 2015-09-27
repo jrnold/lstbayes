@@ -1,6 +1,7 @@
 # Listings language drivers for BUGS, JAGS, and Stan
 
-[![CTAN](https://img.shields.io/ctan/v/tex.svg)](https://www.ctan.org/pkg/lstbayes)
+[![CTAN](https://img.shields.io/ctan/v/lstbayes.svg)](https://www.ctan.org/pkg/lstbayes)
+[![CTAN license](https://img.shields.io/ctan/l/lstbayes.svg)](https://www.ctan.org/pkg/lstbayes)
 
 Adds support for the following languages to the LaTeX
 [listings](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
