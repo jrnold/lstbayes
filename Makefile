@@ -12,6 +12,9 @@ all: build pdf
 
 build: lstbayes.sty
 
+release: build pdf README.md
+	zip lstbayes.zip $^  *.sty *.pdf *.ins *.dtx *.tex Makefile
+
 pdf: lstbayes.pdf examples.pdf
 
 lstbayes.sty: lstbayes.ins lstbayes.dtx
