@@ -1,9 +1,5 @@
 /auto
 *.log
-*.pdf
-/lstlangbayes.aux
-/lstlangbayes.glo
-/lstlangbayes.idx
 *.dvi
 *.out
 *.aux
