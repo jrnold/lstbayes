@@ -17,7 +17,7 @@ release: build pdf README.md
 	-rm lstbayes.zip
 	if [ -d lstbayes ]; then rm -rf ./lstbayes; fi
 	mkdir lstbayes
-	cp *.pdf *.ins *.dtx *.tex Makefile lstbayes
+	cp *.pdf *.ins *.dtx *.tex README.md Makefile lstbayes
 	zip -r lstbayes.zip lstbayes
 
 pdf: lstbayes.pdf examples.pdf
