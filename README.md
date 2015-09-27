@@ -10,14 +10,14 @@ package which pretty-prints source code.
 
 # Usage
 
-Place lstBUGS.sty in the same directory as your .tex file or somewhere LaTeX will find it.
+Place lstbayes.sty in the same directory as your .tex file or somewhere LaTeX will find it.
 See these [instructions](http://en.wikibooks.org/wiki/LaTeX/Packages/Installing_Extra_Packages) for how to install extra packages.
 
 To use, load the package
 ```latex
 \usepackage{lstbayes}
 ```
-Then use `BUGS`, `JAGS` or `Stan` as a language in one of the listings environments or commands. For example,
+Then use `BUGS`, `JAGS` or `Stan` as a language in one of the listings environments or commands. For example, to format the Stan [Eight schools](https://raw.githubusercontent.com/wiki/stan-dev/rstan/8schools.stan) model,
 ```latex
 \begin{lstlisting}[language=Stan]
 data {
