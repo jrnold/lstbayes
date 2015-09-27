@@ -5,7 +5,6 @@ import sys
 import pystache
 
 SRC = sys.argv[1]
-
 N = 2
 
 with open("stan-mode/stan-lang/stan_lang.json", "r") as f:
@@ -31,5 +30,5 @@ keywords3 = tolist(functions + distributions, N)
 
 
 with open(SRC, 'r') as f:
-    print(pystache.render(f.read(), {'keywords3': keywords3}))
+    print(pystache.render(f.read(), {'keywords3': keywords3}, escape = lambda x: x))
 

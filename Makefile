@@ -3,6 +3,7 @@
 #
 
 # formatting tools
+PYTHON = python3
 SHELL = bash
 LATEX = pdflatex
 TEX = tex
@@ -21,6 +22,9 @@ release: build pdf README.md
 	zip -r lstbayes.zip lstbayes
 
 pdf: lstbayes.pdf examples.pdf
+
+lstbayes.dtx: lstbayes.dtx.mustache
+	$(PYTHON) lstbayes.py $< > $@
 
 lstbayes.sty: lstbayes.ins lstbayes.dtx
 	$(TEX) $<
