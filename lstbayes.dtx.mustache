@@ -106,7 +106,7 @@
 % 
 %    \begin{macrocode}
 \lstdefinelanguage{BUGS}{
-  keywords=[1]{for,in,model,T,I,C},%
+  morekeywords=[1]{for,in,model,T,I,C},%
   morecomment=[l]{\#},%
   sensitive=true,%
   alsoletter={.},%
@@ -137,16 +137,16 @@
 % 
 %    \begin{macrocode}
 \lstdefinelanguage{Stan}{
-  keywords=[1]{functions,data,parameters,transformed,model,generated,quantities,%
+  morekeywords=[1]{functions,data,parameters,transformed,model,generated,quantities,%
     for,in,while,print,if,else,lp__,lower,upper,increment_log_prob,T,return,%
     reject,integrate_ode},%
-  keywords=[2]{int,real,vector,%
+  morekeywords=[2]{int,real,vector,%
     ordered,positive_ordered,simplex,unit_vector,%
     row_vector,matrix,%
     cholesky_factor_corr,cholesky_factor_cov,%
     coor_matrix,cov_matrix,%
     void},%
-  keywords=[3]{%
+  morekeywords=[3]{%
     <<#keywords3>>
     <<#.>>
     <<.>>%
