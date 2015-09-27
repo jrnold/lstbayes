@@ -4,7 +4,6 @@
 
 # formatting tools
 LATEX = pdflatex
-MAKEINDEX = makeindex
 TEX = tex
 
 .PHONY: build pdf all
@@ -13,11 +12,15 @@ all: build pdf
 
 build: lstbayes.sty
 
-pdf: lstbayes.pdf
+pdf: lstbayes.pdf examples.pdf
 
 lstbayes.sty: lstbayes.ins lstbayes.dtx
 	$(TEX) $<
 
 lstbayes.pdf: lstbayes.dtx
+	$(LATEX) $<
+
+examples.pdf: examples.tex
+	$(LATEX) $<
 	$(LATEX) $<
 
