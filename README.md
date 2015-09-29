@@ -5,7 +5,7 @@
 
 Adds support for the following languages to the LaTeX
 [listings](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
-package which pretty-prints source code.
+package, which pretty-prints source code:
 
 - [BUGS](http://www.openbugs.net)
 - [JAGS](http://mcmc-jags.sourceforge.net/)
