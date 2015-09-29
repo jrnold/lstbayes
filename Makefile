@@ -31,6 +31,10 @@ lstbayes.sty: lstbayes.ins lstbayes.dtx
 
 lstbayes.pdf: lstbayes.dtx
 	$(LATEX) $<
+	makeindex -s gind.ist -o ${@:.pdf=.ind} ${@:.pdf=.idx}
+	makeindex -s gglo.ist -o ${@:.pdf=.gls} ${@:.pdf=.glo}
+	$(LATEX) $<
+	$(LATEX) $<
 
 examples.pdf: examples.tex
 	$(LATEX) $<

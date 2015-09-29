@@ -7,3 +7,6 @@
 *.idx
 *.zip
 /lstbayes/
+*.gls
+*.ilg
+*.ind
