@@ -1,10 +1,13 @@
 import json
 import re
 import sys
+import datetime
 
 import jinja2
 
 def main():
+    pkgversion = datetime.date.today().strftime("%Y/%m/%d")
+    
     with open("stan-mode/stan-lang/stan_lang.json", "r") as f:
         data = json.load(f)
 
@@ -27,7 +30,7 @@ def main():
                              loader = jinja2.FileSystemLoader('.'))
 
     template = env.get_template('lstbayes_template.dtx')
-    rendered = template.render({'keywords3': keywords3, 'version': data['version']})
+    rendered = template.render({'keywords3': keywords3, 'version': data['version'], 'pkgversion': pkgversion})
     with open('lstbayes.dtx', 'w') as f:
         f.write(rendered)
 

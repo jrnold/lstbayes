@@ -24,7 +24,7 @@ release: build pdf README.md
 pdf: lstbayes.pdf examples.pdf
 
 lstbayes.dtx: lstbayes_template.dtx lstbayes.py
-	$(PYTHON) lstbayes.py
+	$(PYTHON) lstbayes.py $(pkgversion)
 
 lstbayes.sty: lstbayes.ins lstbayes.dtx
 	$(TEX) $<
