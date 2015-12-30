@@ -8,7 +8,7 @@ import jinja2
 def main():
     pkgversion = datetime.date.today().strftime("%Y/%m/%d")
     
-    with open("stan-mode/stan-lang/stan_lang.json", "r") as f:
+    with open("stan-language-definitions/stan_lang.json", "r") as f:
         data = json.load(f)
 
     keywords = sorted(data['keywords']
