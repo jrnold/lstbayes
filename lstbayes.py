@@ -11,9 +11,10 @@ def main():
     with open("stan-language-definitions/stan_lang.json", "r") as f:
         data = json.load(f)
 
-    functions = sorted(data['functions']['names']['all'])
-    distributions = [re.sub(r'_p[dm]f$', '', x)
-                     for x in sorted(data['functions']['names']['density'])]
+    functions = sorted(k for k, v in data['functions'].items()
+                        if not v['operator'])
+    distributions = sorted(v['sampling'] for k, v in data['functions'].items()
+                            if v['sampling'])
     keywords3 = sorted(functions + distributions)
 
     env = jinja2.Environment(block_start_string = '<%',
