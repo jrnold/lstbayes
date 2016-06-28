@@ -4,7 +4,7 @@
 [![CTAN license](https://img.shields.io/ctan/l/lstbayes.svg)](https://www.ctan.org/pkg/lstbayes)
 
 Adds support for the following languages to the LaTeX
-[listings](http://www.ctan.org/tex-archive/macros/latex/contrib/listings/)
+[listings](http://www.ctan.org/pkg/listings/)
 package, which pretty-prints source code:
 
 - [BUGS](http://www.openbugs.net)
@@ -43,7 +43,7 @@ model {
 ```
 
 Also see the examples in `examples.tex` and `examples.pdf` files included in this repository.
-See the `listings` [documentation](https://www.ctan.org/tex-archive/macros/latex/contrib/listings/?la) for more on how to use the `listings` package.
+See the `listings` [documentation](https://www.ctan.org/pkg/listings/) for more on how to use the `listings` package.
 
 # Issues
 
